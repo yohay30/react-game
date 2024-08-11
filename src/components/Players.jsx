@@ -3,19 +3,37 @@ import "./Players.css";
 
 const Players = (props) => {
   const [playerName, setPlayerName] = useState("");
-
   const handleNameChange = (e) => {
     setPlayerName(e.target.value);
   };
 
   const handleAdd = () => {
+    if(localStorage.getItem(`${playerName}`)){
+     alert("ברוך שובך")
+      props.setNumOfPlayers((prevPlayers) => [...prevPlayers, playerName]);
+    } else {
     props.setNumOfPlayers((prevPlayers) => [...prevPlayers, playerName]);
-    setPlayerName("");
+    setPlayerName("");   
+    }
+   
   };
 
-const handleStart=()=>{
+const handleStart =() => {
     props.setStart(false);
-}
+  props.numOfPlayers.map((event,ind)=>{
+    let p = {
+      score:[]
+    }
+    if(localStorage.getItem(`${playerName}`)){
+        
+     }else{
+      props.setArrPerson((prevArrPerson)=>[...prevArrPerson,p]);
+     localStorage.setItem( `${event}`, JSON.stringify(p));   
+     }
+  });
+ 
+   }
+
 
   return (
     <div className="container">
