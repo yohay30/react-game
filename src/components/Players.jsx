@@ -1,56 +1,41 @@
 import React, { useState } from "react";
 import "./Players.css";
-let arrName = [];
-const numOfPlayers = (selected) => {
-  for (let i = 1; i <= selected; i++) {
-    arrName.push(
-      <div key={i} className="player-input">
-        <h4>שחקן {i }</h4>
-        <input type="text" placeholder="הכנס שם שחקן" required />
-      </div>
-    );
-  }
-  return arrName;
-};
-const upDate=() => {
-console.log(arrName);
-const json = JSON.stringify(arrName);
-  const local = localStorage.setItem(json);
+
+const Players = (props) => {
+  const [playerName, setPlayerName] = useState("");
+
+  const handleNameChange = (e) => {
+    setPlayerName(e.target.value);
+  };
+
+  const handleAdd = () => {
+    props.setNumOfPlayers((prevPlayers) => [...prevPlayers, playerName]);
+    setPlayerName("");
+  };
+
+const handleStart=()=>{
+    props.setStart(false);
 }
 
-const Players = () => {
-  const [selected, setSelected] = useState(null);
-  const [playerNames, setPlayerNames] = useState("");
-  const handleStart = () => {
-    setPlayerNames(numOfPlayers(selected));
-  };
   return (
-    <div className="container" dir="rtl">
-      {playerNames === "" ? (
-        <>
-          <h1 id="ask">כמה שחקנים?</h1>
-          <div className="players">
-            {[1, 2, 3, 4].map((num) => (
-              <div
-                key={num}
-                className={`p ${selected === num ? "selected" : ""}`}
-                onClick={() => setSelected(num)}
-              >
-                {num}
-              </div>
-            ))}
-          </div>
-          <button type="submit" className="start-button" onClick={handleStart}>
-            בחר
-          </button>
-        </>
-      ) : (
-      <>
-        <div className="player-inputs-container">{playerNames}</div>
-        <div className="start-button" onClick = {upDate}>התחל</div>
-      </>)}
+    <div className="container">
+      <div>
+        <h3>שם השחקן</h3>
+        <input className="player-input" type="text" value={playerName} onChange={handleNameChange}placeholder="הכנס שם שחקן"/>
+        <button className="button" onClick={handleAdd}>הוסף שחקן</button>
+        <br />
+      </div>
+      <div>
+        <h4 >שחקנים שהוזנו</h4>
+        <ol dir="rtl">
+          {props.numOfPlayers.map((name, index) => (
+            <li key={index}>{name}</li>
+          ))}
+        </ol>
+      </div>
+      <br />
+      <button className="button" onClick={handleStart}>התחל</button>
     </div>
   );
 };
-
 export default Players;

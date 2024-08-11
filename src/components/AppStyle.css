@@ -6,25 +6,25 @@
     height: 100vh;
     width: 100vw;
 }
-.top-left {
+.player-0 {
     grid-area: top-left;
     display: flex;
     justify-content: center;
     align-items: center;
 }
-.top-right {
+.player-1{
     grid-area: top-right;
     display: flex;
     justify-content: center;
     align-items: center;
 }
-.bottom-left {
+.player-2{
     grid-area: bottom-left;
     display: flex;
     justify-content: center;
     align-items: center;
 }
-.bottom-right {
+.player-3 {
     grid-area: bottom-right;
     display: flex;
     justify-content: center;
