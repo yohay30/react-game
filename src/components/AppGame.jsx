@@ -1,5 +1,6 @@
 import React ,{useState} from 'react';
 const AppGame = (props) => {
+
   const [randomNumber, setRandomNumber] = useState(Math.floor(Math.random() * 99) + 1);
   const [steps, setSteps] = useState(0);
   const [message, setMessage] = useState('');
@@ -40,6 +41,7 @@ const AppGame = (props) => {
       </div>
       <p>{name}</p>
         <p>{message}</p>
+        <div>{e}</div>
      
 
     </div>
