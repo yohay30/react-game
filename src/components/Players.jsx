@@ -15,25 +15,22 @@ const Players = (props) => {
     props.setNumOfPlayers((prevPlayers) => [...prevPlayers, playerName]);
     setPlayerName("");   
     }
-   
   };
 
-const handleStart =() => {
-    props.setStart(false);
-  props.numOfPlayers.map((event,ind)=>{
-    let p = {
+   const handleStart =() => {
+     props.setStart(false);
+     props.numOfPlayers.map((event,ind)=>{
+      let p = {
       score:[]
-    }
-    if(localStorage.getItem(`${playerName}`)){
-        
-     }else{
+      }
+     if(localStorage.getItem(`${playerName}`)){   
+      console.log("ww");
+      }else{
       props.setArrPerson((prevArrPerson)=>[...prevArrPerson,p]);
-     localStorage.setItem( `${event}`, JSON.stringify(p));   
+      localStorage.setItem( `${event}`, JSON.stringify(p));   
      }
   });
- 
    }
-
 
   return (
     <div className="container">
@@ -43,16 +40,18 @@ const handleStart =() => {
         <button className="button" onClick={handleAdd}>הוסף שחקן</button>
         <br />
       </div>
+
       <div>
         <h4 >שחקנים שהוזנו</h4>
         <ol dir="rtl">
           {props.numOfPlayers.map((name, index) => (
-            <li key={index}>{name}</li>
+            <li key={index}> {name}</li>
           ))}
         </ol>
       </div>
-      <br />
-      <button className="button" onClick={handleStart}>התחל</button>
+
+      <br/>
+      <button className="button" onClick={handleStart} >התחל </button>
     </div>
   );
 };

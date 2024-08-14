@@ -11,8 +11,8 @@ const [arrPerson ,setArrPerson] = useState([]);
   return (
     <div className="App">
       <header className="App-header">
-        {start ?  <Players setStart={setStart} numOfPlayers={numOfPlayers} setNumOfPlayers={setNumOfPlayers}  arrPerson={arrPerson} setArrPerson={setArrPerson}/>
-         : <AppAllGames numOfPlayers={numOfPlayers} arrPerson={arrPerson}/>}
+    {start ? <Players setStart={setStart} numOfPlayers={numOfPlayers} setNumOfPlayers={setNumOfPlayers}  arrPerson={arrPerson} setArrPerson={setArrPerson}/>
+    : <AppAllGames numOfPlayers = {numOfPlayers} arrPerson = {arrPerson}  setStart={setStart}/>}
       </header>
     </div>
   );
