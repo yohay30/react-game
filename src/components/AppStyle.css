@@ -1,44 +1,92 @@
 .dispels {
     display: grid;
     grid-template-areas:
-        "top-left top-right"
-        "bottom-left bottom-right";
+      "top-left top-right"
+      "bottom-left bottom-right";
     height: 100vh;
     width: 100vw;
-}
-.player-0 {
+    margin: 3px;
+   
+  }
+  
+  .player-0 {
     grid-area: top-left;
     display: flex;
     justify-content: center;
     align-items: center;
-}
-.player-1{
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .player-1 {
     grid-area: top-right;
     display: flex;
     justify-content: center;
     align-items: center;
-}
-.player-2{
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .player-2 {
     grid-area: bottom-left;
+    border-radius: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
-}
-.player-3 {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .player-3 {
     grid-area: bottom-right;
     display: flex;
     justify-content: center;
     align-items: center;
-}
-.personGame {
-    background-color: rgb(142, 134, 125);
-    border: 2px solid;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .personGame {
+    background:  linear-gradient(135deg, #f57b42c0, #c09d5cbc);
+    border: 2px solid #ccc; 
     padding: 20px;
-    width: 200px;
-}
+    width: 250px;
+    border-radius: 20px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    text-align: center; 
+    font-family: 'Arial', sans-serif; 
+  }
+  
+  .button-container {
+    display: flex;
+    gap: 10px; 
+    justify-content: center;
+    margin-top: 10px;
+  }
 
+  .button-container button {
+    background-color: #007bff; 
+    color: white; 
+    border: none; 
+    padding: 10px 20px;
+    border-radius: 100px;
+    cursor: pointer;
+    font-size: 16px; 
+    transition: background-color 0.3s ease;
+  }
+  
+  .button-container button:disabled {
+    background-color: #d6d6d6; 
+    cursor: not-allowed; 
+  }
+  h2, h1 {
+    font-family: 'Arial', sans-serif;
+    color: #362f2f; 
+  }
+  p{
+    color: #000;
+   font-weight: bolder;
+   
+  }
 
-
-
-
-
+  
+  

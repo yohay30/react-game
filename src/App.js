@@ -13,6 +13,7 @@ const [arrPerson ,setArrPerson] = useState([]);
       <header className="App-header">
     {start ? <Players setStart={setStart} numOfPlayers={numOfPlayers} setNumOfPlayers={setNumOfPlayers}  arrPerson={arrPerson} setArrPerson={setArrPerson}/>
     : <AppAllGames numOfPlayers = {numOfPlayers} arrPerson = {arrPerson}  setStart={setStart}/>}
+  
       </header>
     </div>
   );
